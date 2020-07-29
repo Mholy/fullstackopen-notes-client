@@ -74,6 +74,7 @@ const App = () => {
     try {
       const user = await loginService.login({ username, password })
 
+      noteService.setToken(user.token)
       setUser(user)
       setUsername('')
       setPassword('')
@@ -93,7 +94,7 @@ const App = () => {
           type="text"
           name="Username"
           value={username}
-          onChange={(target) => setUsername(target.value)}
+          onChange={(e) => setUsername(e.target.value)}
         />
       </div>
       <div>
@@ -102,7 +103,7 @@ const App = () => {
           type="password"
           name="Password"
           value={password}
-          onChange={(target) => setPassword(target.value)}
+          onChange={(e) => setPassword(e.target.value)}
         />
       </div>
       <button type="submit">Login</button>
