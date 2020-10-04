@@ -20,6 +20,7 @@ const LoginForm = ({
     <div>
       Username{' '}
       <input
+        id="username"
         type="text"
         name="Username"
         value={username}
@@ -29,13 +30,16 @@ const LoginForm = ({
     <div>
       Password{' '}
       <input
+        id="password"
         type="password"
         name="Password"
         value={password}
         onChange={handlePasswordChange}
       />
     </div>
-    <button type="submit">Login</button>
+    <button id="login-button" type="submit">
+      Login
+    </button>
   </form>
 )
 LoginForm.propTypes = propTypes
